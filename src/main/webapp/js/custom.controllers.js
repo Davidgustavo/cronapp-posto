@@ -1,5 +1,5 @@
 app.controller('AfterLoginController', function($scope) {
- 
+ $('body').addClass('MinhaClasse');
 });
 
 app.controller('AfterHomeController', function($scope) {
