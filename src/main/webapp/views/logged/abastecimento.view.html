@@ -25,19 +25,23 @@
                 <th class="">
                     <div class="">Data</div>
                 </th>
-                <th class="">
-                    <div class="">Valor</div>
-                </th>
-                <th class="">
-                    <div class="">Preco Litro</div>
-                </th>
+                
                 <th class="">
                     <div class="">Km Anterior</div>
-                </th>
-                <th class="">
+                </th><th class="">
                     <div class="">Km Atual</div>
+                </th><th class="">
+                    <div class="">Custo KM</div>
+                </th><th class="">
+                    <div class="">Consumo Médio</div>
+                </th><th class="">
+                    <div class="">Valor</div>
+                </th><th class="">
+                    <div class="">Preco Litro</div>
                 </th>
-                <th class="">
+                
+                
+                <th class="active">
                     <div class="">Carro</div>
                 </th>
                 <th class="">
@@ -55,32 +59,26 @@
                                 {{rowData.data | mask:'datetime'}}
                     </div>
                 </td>
+                
                 <td class="">
-                    <div class="">
-                                {{rowData.valor  }}
-                    </div>
+                    <div class="">{{rowData.kmAnterior }}</div>
                 </td>
                 <td class="">
-                    <div class="">
-                                {{rowData.precoLitro  }}
-                    </div>
+                    <div class="">{{rowData.kmAtual }}</div>
                 </td>
                 <td class="">
-                    <div class="">
-                                {{rowData.kmAnterior  }}
-                    </div>
+                    <div class="">{{rowData.custoKM }}</div>
                 </td>
                 <td class="">
-                    <div class="">
-                                {{rowData.kmAtual  }}
-                    </div>
+                    <div class="">{{rowData.consumoMedio}}</div>
                 </td>
                 <td class="">
-                    <div class="">
-                            {{rowData.carro.placa}}
-                    </div>
-                </td>
-                <td class="">
+                    <div class="">{{rowData.valor | mask: 'R$ ' + '#.##0,00;0'}}</div>
+                </td><td class="">
+                    <div class="">{{rowData.precoLitro | mask: 'R$ ' + '#.##0,00;0'}}</div>
+                </td><td class="">
+                    <div class="">{{rowData.carro.placa}}</div>
+                </td><td class="">
                     <div class="">
                             {{rowData.posto.nome}}
                     </div>

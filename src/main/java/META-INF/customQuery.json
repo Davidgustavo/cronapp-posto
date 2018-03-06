@@ -654,20 +654,22 @@
 		"defaultValues": {
 			"id": null,
 			"data": null,
-			"km": null,
 			"valor": null,
 			"precoLitro": null,
 			"carro": null,
-			"posto": null
+			"posto": null,
+			"kmAnterior": null,
+			"kmAtual": null
 		},
 		"security": {
 			"id": null,
 			"data": null,
-			"km": null,
 			"valor": null,
 			"precoLitro": null,
 			"carro": null,
-			"posto": null
+			"posto": null,
+			"kmAnterior": null,
+			"kmAtual": null
 		},
 		"calcFields": {
 			"custoKM": {
