@@ -1,0 +1,108 @@
+<div id="starter" ng-init="" ng-destroy=""><div class="component-holder ng-binding ng-scope" data-component="crn-navbar" id="crn-navbar-986427">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="javascript:void(0);">
+            <div class="component-holder ng-binding ng-scope" data-component="crn-image" id="crn-image-535259"><img src="plugins/cronapp-framework-js/dist/img/logo.png" style="max-height:30px; margin-top:-5px"></div>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" style="float:none">
+          <li class="dropdown component-holder" data-component=""> <a href="#/home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-home"></i> <span>{{"Home.view.Home" | translate}}</span> </a> </li>
+          <li class="dropdown component-holder" data-component="crn-menu-item" cronapp-security="visible : Administrators;Administrador de posto, enabled : Administrators;Administrador de posto"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-users fa-lg"></i> <span>{{"Home.view.Admin" | translate}}</span> <span class="caret"></span> </a>
+            <ul class="dropdown-menu" style="">
+              <li><a href="#/home/admin/user" class="component-holder" data-component="crn-anchor" cronapp-security="visible : Administrators">Ususario</a><a href="#/home/admin/carroadmin" class="component-holder" data-component="crn-anchor" cronapp-security="visible : Administrators">Carro</a><a href="#/home/admin/abastecimentoadmin" class="component-holder" data-component="crn-anchor" cronapp-security="visible : Administrators">Abastecimento</a><a href="#/home/admin/postoadmin" class="component-holder" data-component="crn-anchor" cronapp-security="visible : Administrators;Administrador de posto">Posto</a></li>
+            </ul> </li>
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-lg fa-gear"></i> <span>{{"ChooseTheme" | translate}}</span> <span class="caret"></span> </a>
+            <ul class="dropdown-menu" style="">
+              <li ng-repeat="theme in themes" ng-click="changeTheme(theme)"> <a href="javascript:void(0);" ng-class="{'bg-primary': myTheme==theme}">{{theme}} <i class="fa fa-lg fa-check pull-right" ng-if="myTheme==theme"></i></a></li>
+            </ul> </li>
+          <li class="dropdown component-holder navbar-right" data-component="crn-menu-item"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img class="user-avatar" alt="{{session.user.name}}" ng-src="{{session.picture || 'plugins/cronapp-framework-js/dist/img/nophoto.png'}}" style="max-height:18px;max-width:18px"> <span>{{session.user.name}}</span> <span class="caret"></span> </a>
+            <ul class="dropdown-menu" style="">
+              <li><a class="component-holder" data-toggle="modal" data-target="#modalPassword" data-component="crn-anchor">{{"Home.view.ChangePassword" | translate}}</a><a class="component-holder" data-toggle="modal" data-target="#modal93077" data-component="crn-anchor">{{'UpdateProfile' | translate}}</a></li>
+              <li ng-click="logout()"><a href="javascript:void(0);"><span>{{"Home.view.Logout" | translate}}</span></a></li>
+            </ul> </li>
+        <li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="component-holder fa fa-car" data-component="crn-icon" id="crn-icon-708230"></i><span> Carros</span> <span class="caret"></span></a> <ul class="dropdown-menu" style="">   <li><a href="#/home/admin/user" class="component-holder" xattr-fullsize="display:block;" style="display:block;" data-component="crn-anchor" cronapp-security="visible : Administrators, enabled : Administrators">Motorista</a></li> <li><a href="#/home/logged/carro" class="component-holder" xattr-fullsize="display:block;" style="display:block;" data-component="crn-anchor">Carro</a></li><li><a href="#/home/logged/abastecimento" class="component-holder" xattr-fullsize="display:block;" style="display:block;" data-component="crn-anchor">Abastecimento</a></li><li><a href="#/home/logged/posto" class="component-holder" xattr-fullsize="display:block;" style="display:block;" data-component="crn-anchor" cronapp-security="visible : Administrators, enabled : Administrators">Posto</a></li></ul></li><li class="dropdown component-holder" data-component="crn-menu-item"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="component-holder glyphicon glyphicon-print" data-component="crn-icon" id="crn-icon-314788"></i><span> Relatórios</span> <span class="caret"></span></a> <ul class="dropdown-menu" style="">   <li><a href="" class="component-holder" xattr-fullsize="display:inline;" style="display:inline;" data-component="crn-anchor" ng-click="getReport('reports/Abastecimentos.jrxml',[{&quot;PLACA_2&quot;:&quot;&quot;},{&quot;PLACA_1&quot;:&quot;&quot;},{&quot;NOME&quot;:&quot;&quot;}])">Abastecimentos</a></li> </ul></li></ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div ui-view="" class="container-fluid main-view" data-container="true">
+</div>
+
+<div class="modal fade" id="modalPassword">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">{{"Home.view.ChangePassword" | translate}}</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-validation" autocomplete="off" name="form" role="form">
+          <div class="text-danger wrapper text-center" ng-show="authError">
+          </div>
+          <div class="list-group list-group-sm">
+            <div class="list-group-item">
+              <input type="password" class="form-control no-border" id="oldPassword" placeholder="{{'Home.view.Old Password' | translate}}" ng-required="true">
+            </div>
+            <div class="list-group-item">
+              <input type="password" class="form-control no-border" id="newPassword" placeholder="{{'Home.view.New Password' | translate}}" ng-required="true">
+            </div>
+            <div class="list-group-item">
+              <input type="password" class="form-control no-border" id="newPasswordConfirmation" placeholder="{{'Home.view.Confirmation' | translate}}" ng-required="true">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading">{{"Home.view.ChangePassword" | translate}}</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div><div class="modal fade" id="modal81381">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="component-holder modal-header">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true">{{'UpdateProfile' | translate}}</div>
+       </div>
+      </div>
+      <div class="modal-body">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true"></div>
+       </div>
+     </div>
+     <div class="modal-footer">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true">FOOTER</div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+<div class="modal fade" id="modal97075">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="component-holder modal-header">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true">{{'UpdateProfile' | translate}}</div>
+       </div>
+      </div>
+      <div class="modal-body">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true"></div>
+       </div>
+     </div>
+     <div class="modal-footer">
+       <div class="list-group list-group-sm row">
+         <div data-container="true" data-replace="true">FOOTER</div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+</div>
