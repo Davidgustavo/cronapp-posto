@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly formTarget="src/main/webapp/views/logged/abastecimento.view.html" resourceType="JAVA" ruleDescription="consumoMediodoPosto" ruleName="consumoMediodoPosto" ruleSynchronous="false" ruleTimeout="300" ruleType="I">
-  <metadata scale="1" scrollx="357.9999999999991" scrolly="-70.50000000000014" target="Anb:u5+^,0vLkL9QIqn5"/>
+  <metadata scale="1" scrollx="186" scrolly="-86.5" target="Anb:u5+^,0vLkL9QIqn5"/>
   <block colour="#995ba5" id="Z~|v3.$6YH/XYke3!^Cg" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-262" y="83">
     <field name="NAME">Consumo_Medio_Posto2</field>
     <comment h="80" pinned="false" w="160">consumoMediodoPosto</comment>
